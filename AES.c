@@ -123,13 +123,7 @@ char *input_from__user(void)
 		user_input_str[i] = c;
 		i++;
 	}
-	if (c == '\n')
-	{
-		user_input_str[i] = '\n';
-	}
-	n = i + 1; 
-	uint8_t padding = 16 - (n % 16);
-	++i;
+	uint8_t padding = 16 - (i % 16);
 	while (padding != 0 && N != padding)
 	{
 		user_input_str[i] = padding;
